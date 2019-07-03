@@ -1,0 +1,358 @@
+
+html,body{
+    height:100%;
+}
+
+@font-face{font-family:"proxima-nova";src:url("https://use.typekit.net/af/c47696/00000000000000003b9b305e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/c47696/00000000000000003b9b305e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/c47696/00000000000000003b9b305e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");font-style:normal;font-weight:100}
+@font-face{font-family:"proxima-nova";src:url("https://use.typekit.net/af/576d53/00000000000000003b9b3066/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/576d53/00000000000000003b9b3066/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/576d53/00000000000000003b9b3066/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");font-style:normal;font-weight:600}
+@font-face{font-family:"proxima-nova";src:url("https://use.typekit.net/af/cebe0e/00000000000000003b9b3060/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/cebe0e/00000000000000003b9b3060/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/cebe0e/00000000000000003b9b3060/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");font-style:normal;font-weight:300}
+
+*{font-family: "proxima-nova", "Helvetica", "Arial";}
+
+.glyphicon {
+    font-family: 'Glyphicons Halflings';
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h1,.jumbotron p,.nav a {
+    font-family: "proxima-nova", Helvetica, Arial !important;
+    text-shadow: 0 0 1px rgba(0,0,0,0.4);
+    color: #fff;
+}
+
+.jumbotron p {
+    font-size: 2em;
+}
+
+.container {
+    min-height: 100%;
+}
+
+.stretch{
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 5em;
+}
+
+.stretch .row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+.hero-cover {
+    background-image:url("/images/ui/Simon4-Farm-Hand-2880-1920.jpg");
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.blog-hero {
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img.figured.logo {
+    height:55px;
+    border:0;
+}
+
+.navbar {
+    padding-left: 24px;
+    height:90px;
+    min-height:fit-content;
+    background-color:#5379c4;
+    border:none;
+    border-radius: 0;
+}
+
+.navbar-nav {
+    margin-top: 1.4em;
+}
+
+nav .nav span.auth {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 1.3em;
+    display: inline-block;
+}
+
+nav .nav span.auth a {
+    color: #777;
+    font-size: 1.1em;
+    padding: 0 0.3em;
+}
+
+nav li .glyphicon,
+nav .nav span.auth .glyphicon {
+  padding-right: 0.5em;
+  top: 2px;
+}
+
+nav .author-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.5em;
+    top: -0.5em;
+    position: relative;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #bacff6;
+}
+
+.navbar-default .navbar-nav>li>a:active {
+    color: #132B57;
+}
+
+
+.container form label,
+.container form .btn-gap {
+    margin-top: 1.5em;
+}
+
+.post .pub {
+    color: #999;
+}
+
+.post .pub .glyphicon {
+    margin:0 0.5em 0 0.3em;
+    color: #ccc;
+}
+
+.row .posts {
+    height:35em;
+    position: relative;
+    margin-top: 1em;
+}
+.row .posts:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient( rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100% );
+}
+
+.row .posts .post .image {
+    width: 100%;
+    height: 15em;
+    background-position: center top;
+    background-size: cover;   
+}
+
+.row .posts .post img {
+    width: 100%;
+}
+
+
+.image_top {
+    float: left;
+    margin-right:4em;
+}
+
+
+.top_post {
+    margin-top: 2em;
+}
+
+.top_post .pub {
+    color: #999;
+    display: block;
+}
+
+.top_post a {
+    background-color: rgba(250,250,250,0);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.top_post a:hover {
+    background-color: rgba(244,244,244,0.5)
+}
+
+
+.top_post h3 {
+    font-size: 3em;
+    color: #111;
+}
+
+.top_post p {
+    font-size: 1.5em;
+    color: #222;
+}
+
+.top_post .deets {
+    margin-bottom: 1em;
+}
+
+.top_post .deets small.pub {
+    margin-bottom: 0.5em;
+}
+
+.top_post .deets small.pub span.label {
+    margin-left: 0.5em
+}
+
+.top_post b.more {
+    dispaly: inline;
+    float: right;
+}
+
+.post_body_top {
+
+}
+
+
+.post_body_top h3 {
+    margin-top: 0;
+}
+
+.post .post_body_top article {
+    margin-top: 1em;
+}
+
+
+.post_deets dl.dl-horizontal {
+    margin-bottom: 0.5em;
+}
+
+.post_deets dl.dl-horizontal dt {
+    text-align: left;
+    width: 8em;
+}
+
+
+.post_deets dl.dl-horizontal dd {
+    margin-left: 8em;
+}
+
+.post_deets span.label {
+    margin-right: 0.5em;
+}
+
+.post_image {
+}
+
+.post_body p {
+    font-size: 1.5em !important;
+}
+
+a.archive-link {
+    margin-top: 2em;
+    width: 50%;
+}
+
+.btm.more {
+    z-index: 999;
+}
+
+.btm.more:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.btm {
+    position: absolute;
+    bottom: 1em;
+}
+
+.footsm {
+  position: relative;
+  height: 5em;
+  margin-top: -5em;
+  clear: both;
+}
+.footsm .jumbotron{
+  padding:0;
+  margin-top: 2em;
+  
+}
+
+.footsm p{
+  font-size:1em;
+  color:rgba(255,255,255,0.8);
+  margin-bottom:0;
+}
+
+.footer-spacer {
+    height:5em;
+    width:100%;
+}
+
+
+a.btn-gap {
+    margin-top: 1.5em;
+}
+
+
+#comment-form {
+    margin-top: 1em;
+    padding-bottom: 5em;
+}
+
+
+.btn-h1-spacing {
+   margin-top: 18px;
+}
+
+.form-spacing-top {
+ margin-top: 30px;
+}
+
+.comment {
+ margin-bottom: 45px;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+.author-name {
+ float: left;
+ margin-left: 15px; 
+}
+
+.author-name>h4 {
+ margin: 5px 0px;
+ 
+}
+
+.author-time {
+ font-size: 11px;
+ font-style: italic;
+ color: #aaa;
+}
+
+.comment-content {
+ clear: both;
+ margin-left: 65px;
+ font-size: 16px;
+ line-height: 1.3em;
+}
+
+.comments-title {
+ margin-bottom:45px;
+}
+
+.comments-title>span {
+ margin-right: 15px;
+}
