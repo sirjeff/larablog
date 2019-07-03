@@ -12,7 +12,6 @@
     "support": {"issues": "https://github.com/sirjeff/larablog/issues"},  
     "require": {
         "php": ">=5.6.4",
-        "doctrine/dbal": "^2.9",
         "intervention/image": "^2.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
