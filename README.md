@@ -1,7 +1,9 @@
 # larablog
 
-Test - Proof of Concept , Blog in Laravel
+**Test - Proof of Concept , Blog in Laravel**
+
 This is the MySQL version, and will soon release a MongoDB version.
+
 Also note the original demo was for Figured - which will be removed from the sorce ... eventually.
 
 ## Instalation
