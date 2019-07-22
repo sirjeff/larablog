@@ -9,8 +9,8 @@
 @section('hero')
   <div class="container-fluid hero-cover">
         <div class="jumbotron">
-            <h1>Figured Blog</h1>
-            <p class="lead">Stay up-to-date with the latest news and information from our internal soclial media teams, and join in the conversation.</p>
+            <h1>FishPants the Blog</h1>
+            <p class="lead">Stay up-to-date with the latest fake news and pretend information from our make believe internal marketeers.</p>
         </div>
   </div>
 @endsection

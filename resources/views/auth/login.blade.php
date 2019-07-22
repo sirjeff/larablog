@@ -6,7 +6,7 @@
         <div class="col-md-6 col-md-offset-3">
             <h1>Sign-in</h1>
             <p class="lead">
-            Sign-in to access the admin features of the Figured Blog.
+            Sign-in to access the admin features of the FishPants Blog.
             <br>If you do not have an account, please <a href="/auth/register">register here</a> first.
             </p>
             {!! Form::open() !!}

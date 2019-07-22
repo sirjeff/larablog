@@ -7,7 +7,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="/"><img class="figured logo" src="/images/ui/figured-logo.png"></a>
+       <a class="navbar-brand" href="/"><img class="FishPants logo" src="/images/ui/fish-pants.png"></a>
      </div>
 
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

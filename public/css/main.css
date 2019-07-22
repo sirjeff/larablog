@@ -44,7 +44,7 @@ html,body{
 
 
 .hero-cover {
-    background-image:url("/images/ui/Simon4-Farm-Hand-2880-1920.jpg");
+    background-image:url("/images/ui/GreyLynnCountdownChimeny_20180915_171131.jpg");
     background-position: center bottom;
     background-size: cover;
     background-attachment: fixed;
@@ -56,26 +56,33 @@ html,body{
     background-attachment: fixed;
 }
 
-img.figured.logo {
-    height:55px;
+.navbar-brand {
+ height:5em;
+ padding:1em;
+}
+
+.navbar-brand img.logo {
+    height:5em;
     border:0;
+    top:-1em;
+    position:relative;
 }
 
 .navbar {
-    padding-left: 24px;
-    height:90px;
+    padding-left: 1em;
+    height:7em;
     min-height:fit-content;
-    background-color:#5379c4;
+    background-color:#c45353;
     border:none;
     border-radius: 0;
 }
 
 .navbar-nav {
-    margin-top: 1.4em;
+    margin-top: 2em;
 }
 
 nav .nav span.auth {
-    color: #999;
+    color: #eee;
     font-size: 0.9em;
     margin-top: 1.3em;
     display: inline-block;
