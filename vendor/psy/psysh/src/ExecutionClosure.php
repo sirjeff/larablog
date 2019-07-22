@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2018 Justin Hileman
+ * (c) 2012-2019 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -37,7 +37,7 @@ class ExecutionClosure
                 \set_error_handler([$__psysh__, 'handleError']);
 
                 // Evaluate the current code buffer
-                $_ = eval($__psysh__->onExecute($__psysh__->flushCode() ?: ExecutionClosure::NOOP_INPUT));
+                $_ = eval($__psysh__->onExecute($__psysh__->flushCode() ?: self::NOOP_INPUT));
             } catch (\Throwable $_e) {
                 // Clean up on our way out.
                 \restore_error_handler();
@@ -72,7 +72,7 @@ class ExecutionClosure
     /**
      * Set the closure instance.
      *
-     * @param Shell    $psysh
+     * @param Shell    $shell
      * @param \Closure $closure
      */
     protected function setClosure(Shell $shell, \Closure $closure)

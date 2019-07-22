@@ -132,9 +132,9 @@
       'pusher' => 
       array (
         'driver' => 'pusher',
-        'key' => '',
-        'secret' => '',
-        'app_id' => '',
+        'key' => NULL,
+        'secret' => NULL,
+        'app_id' => NULL,
         'options' => 
         array (
         ),
@@ -279,7 +279,7 @@
       array (
         'host' => '127.0.0.1',
         'password' => NULL,
-        'port' => '6379',
+        'port' => 6379,
         'database' => 0,
       ),
     ),
@@ -710,6 +710,7 @@
     ),
     'dont_alias' => 
     array (
+      0 => 'App\\Nova',
     ),
   ),
 );

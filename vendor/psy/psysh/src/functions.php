@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2018 Justin Hileman
+ * (c) 2012-2019 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -70,7 +70,7 @@ if (!\function_exists('Psy\debug')) {
      *         }
      *     }
      *
-     * @param array         $vars   Scope variables from the calling context (default: array())
+     * @param array         $vars   Scope variables from the calling context (default: [])
      * @param object|string $bindTo Bound object ($this) or class (self) value for the shell
      *
      * @return array Scope variables from the debugger session
@@ -277,10 +277,15 @@ if (!\function_exists('Psy\bin')) {
                 $input->bind(new InputDefinition([
                     new InputOption('help',     'h',  InputOption::VALUE_NONE),
                     new InputOption('config',   'c',  InputOption::VALUE_REQUIRED),
-                    new InputOption('version',  'v',  InputOption::VALUE_NONE),
+                    new InputOption('version',  'V',  InputOption::VALUE_NONE),
                     new InputOption('cwd',      null, InputOption::VALUE_REQUIRED),
                     new InputOption('color',    null, InputOption::VALUE_NONE),
                     new InputOption('no-color', null, InputOption::VALUE_NONE),
+
+                    new InputOption('quiet',          'q',        InputOption::VALUE_NONE),
+                    new InputOption('verbose',        'v|vv|vvv', InputOption::VALUE_NONE),
+                    new InputOption('no-interaction', 'n',        InputOption::VALUE_NONE),
+                    new InputOption('raw-output',     'r',        InputOption::VALUE_NONE),
 
                     new InputArgument('include', InputArgument::IS_ARRAY),
                 ]));
@@ -304,6 +309,11 @@ if (!\function_exists('Psy\bin')) {
                 $config['colorMode'] = Configuration::COLOR_MODE_DISABLED;
             }
 
+            // Handle --raw-output
+            if ($input->getOption('raw-output')) {
+                $config['rawOutput'] = true;
+            }
+
             $shell = new Shell(new Configuration($config));
 
             // Handle --help
@@ -324,7 +334,7 @@ Options:
   --help     -h Display this help message.
   --config   -c Use an alternate PsySH config file location.
   --cwd         Use an alternate working directory.
-  --version  -v Display the PsySH version.
+  --version  -V Display the PsySH version.
   --color       Force colors in output.
   --no-color    Disable colors in output.
 

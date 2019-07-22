@@ -14,14 +14,18 @@
 
 namespace Ramsey\Uuid;
 
+use DateTime;
+use JsonSerializable;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Exception\UnsupportedOperationException;
+use Serializable;
 
 /**
  * UuidInterface defines common functionality for all universally unique
  * identifiers (UUIDs)
  */
-interface UuidInterface extends \JsonSerializable, \Serializable
+interface UuidInterface extends JsonSerializable, Serializable
 {
     /**
      * Compares this UUID to the specified UUID.
@@ -121,9 +125,9 @@ interface UuidInterface extends \JsonSerializable, \Serializable
      * has version type 1. If this UUID is not a time-based UUID then
      * this method throws `UnsupportedOperationException`.
      *
-     * @return \DateTime A PHP DateTime representation of the date
+     * @return DateTime A PHP DateTime representation of the date
      * @throws UnsupportedOperationException If this UUID is not a version 1 UUID
-     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called in a 32-bit system and
+     * @throws UnsatisfiedDependencyException if called in a 32-bit system and
      *     `Moontoast\Math\BigNumber` is not present
      */
     public function getDateTime();
@@ -264,6 +268,10 @@ interface UuidInterface extends \JsonSerializable, \Serializable
     /**
      * Converts this UUID into a string representation.
      *
+     * @deprecated In ramsey/uuid 4.0.0, this method will be replaced with the
+     *     __toString() magic method, which is currently available in the
+     *     Uuid concrete class. The new recommendation is to cast Uuid objects
+     *     to string, rather than calling `toString()`.
      * @return string
      */
     public function toString();

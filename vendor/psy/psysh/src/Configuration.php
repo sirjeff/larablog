@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2018 Justin Hileman
+ * (c) 2012-2019 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -49,6 +49,7 @@ class Configuration
         'manualDbFile',
         'pager',
         'prompt',
+        'rawOutput',
         'requireSemicolons',
         'runtimeDir',
         'startupMessage',
@@ -76,7 +77,8 @@ class Configuration
     private $useBracketedPaste;
     private $hasPcntl;
     private $usePcntl;
-    private $newCommands       = [];
+    private $newCommands = [];
+    private $rawOutput = false;
     private $requireSemicolons = false;
     private $useUnicode;
     private $useTabCompletion;
@@ -642,6 +644,29 @@ class Configuration
     }
 
     /**
+     * Check whether to use raw output.
+     *
+     * This is set by the --raw-output (-r) flag, and really only makes sense
+     * when non-interactive, e.g. executing stdin.
+     *
+     * @return bool true if raw output is enabled
+     */
+    public function rawOutput()
+    {
+        return $this->rawOutput;
+    }
+
+    /**
+     * Enable or disable raw output.
+     *
+     * @param bool $rawOutput
+     */
+    public function setRawOutput($rawOutput)
+    {
+        $this->rawOutput = (bool) $rawOutput;
+    }
+
+    /**
      * Enable or disable strict requirement of semicolons.
      *
      * @see self::requireSemicolons()
@@ -714,8 +739,7 @@ class Configuration
      * Get the current error logging level.
      *
      * By default, PsySH will automatically log all errors, regardless of the
-     * current `error_reporting` level. Additionally, if the `error_reporting`
-     * level warrants, an ErrorException will be thrown.
+     * current `error_reporting` level.
      *
      * Set `errorLoggingLevel` to 0 to prevent logging non-thrown errors. Set it
      * to any valid error_reporting value to log only errors which match that
@@ -836,7 +860,7 @@ class Configuration
     /**
      * Get the decoration (i.e. color) setting for the Shell Output service.
      *
-     * @return null|bool 3-state boolean corresponding to the current color mode
+     * @return bool|null 3-state boolean corresponding to the current color mode
      */
     public function getOutputDecorated()
     {

@@ -21,12 +21,6 @@
         "tinymce/tinymce": ">= 4",
         "twbs/bootstrap": "3.3.6"
     },
-    "dependencies": {
-      "axios": ">=0.18.1"
-    },
-    "devDependencies": {
-     "axios": ">=0.18.1"
-    },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
