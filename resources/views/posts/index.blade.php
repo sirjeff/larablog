@@ -3,11 +3,11 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
             <h1>All Posts</h1>
         </div>
-        <div class="col-md-2">
-            <a href="{{ route('posts.create') }}" class="btn btn-lg btn-primary btn-block btn-h1-spacing btn-gap">Create New Post</a>
+        <div class="col-md-3 new_post">
+            <a href="{{ route('posts.create') }}" class="btn btn-lg btn-primary btn-block btn-h1-spacing btn-gap"><span class="glyphicon glyphicon-plus"></span> New Post</a>
         </div>
         <div class="col-md-12">
             <hr>
