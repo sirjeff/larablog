@@ -3,9 +3,7 @@
      <div class="navbar-header">
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
          <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
+         <span class="glyphicon glyphicon-menu-hamburger">
        </button>
        <a class="navbar-brand" href="/"><img class="FishPants logo" src="/images/ui/fish-pants.png"></a>
      </div>
@@ -19,25 +17,23 @@
        </ul>
        <ul class="nav navbar-nav navbar-right">
          @if (Auth::check())
-         
-         <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-               <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim( Auth::user()->email))) . "?s=64&d=monsterid" }}" class="author-image" alt="gravatar image">{{ Auth::user()->name }} <span class="caret"></span>
-           </a>
-           <ul class="dropdown-menu">
-             <li><a href="{{ route('posts.index') }}">All Posts</a></li>
-             <li><a href="{{ route('posts.create') }}">Create Post</a></li>
-             <li><a href="{{ route('categories.index') }}">All Categories</a></li>
-             <li><a href="{{ route('tags.index') }}">All Tags</a></li>
-             <li role="separator" class="divider"></li>
-             <li><a href="{{ route('logout') }}">Sign-out</a></li>
-           </ul>
-         </li>
-         
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle userid" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                   <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim( Auth::user()->email))) . "?s=64&d=monsterid" }}" class="author-image" alt="gravatar image">{{ Auth::user()->name }} <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                 <li><a href="{{ route('posts.index') }}">All Posts</a></li>
+                 <li><a href="{{ route('posts.create') }}">Create Post</a></li>
+                 <li><a href="{{ route('categories.index') }}">All Categories</a></li>
+                 <li><a href="{{ route('tags.index') }}">All Tags</a></li>
+                 <li role="separator" class="divider"></li>
+                 <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Sign-out</a></li>
+               </ul>
+             </li>
          @else
-         <span class="auth">
-             <span class="glyphicon glyphicon-log-in"></span><a href="{{ route('login') }}">Sign-in</a> / <a href="/auth/register">Register</a>
-         </span>
+             <span class="auth">
+                 <span class="glyphicon glyphicon-log-in"></span><a href="{{ route('login') }}">Sign-in</a> / <a href="/auth/register">Register</a>
+             </span>
          @endif
        </ul>
      </div>
