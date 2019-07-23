@@ -56,6 +56,48 @@ html,body{
     background-attachment: fixed;
 }
 
+/* Nav Bar */
+.collapse.in {
+    display: inline-block;
+}
+
+.navbar {
+    padding-left: 1em;
+    height:7em;
+    min-height:fit-content;
+    background-color:#c45353;
+    border:none;
+    border-radius: 0;
+}
+
+
+.navbar .navbar-toggle {
+    padding: 0.3em;
+    top: 1em;
+}
+
+.navbar .navbar-toggle .glyphicon-menu-hamburger {
+    font-size: 2em;
+    top: 2px;
+}
+
+.navbar .navbar-collapse {
+    background:rgba(255,255,255,0.9);
+    background: #c45353;
+    float: right;
+    margin: 0;
+    
+}
+/*
+.navbar .navbar-right {
+    background: #fff;
+    background: rgba(239, 116, 66, 0.24);
+}
+*/
+.navbar-nav .open .dropdown-menu {
+    background: #fff;
+}
+
 .navbar-brand {
  height:5em;
  padding:1em;
@@ -68,14 +110,7 @@ html,body{
     position:relative;
 }
 
-.navbar {
-    padding-left: 1em;
-    height:7em;
-    min-height:fit-content;
-    background-color:#c45353;
-    border:none;
-    border-radius: 0;
-}
+
 
 .navbar-nav {
     margin-top: 2em;
@@ -110,8 +145,12 @@ nav .author-image {
     position: relative;
 }
 
+
 .navbar-default .navbar-nav>li>a {
     color: #fff;
+    border-top: solid 1px transparent;
+    border-bottom: solid 1px transparent;
+    background: rgba(239, 116, 66, 0.2);
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -123,9 +162,30 @@ nav .author-image {
 }
 
 
+.navbar-default .navbar-nav>li>a.userid {
+    color: #333;
+}
+.navbar-default .navbar-nav>li>a.userid:hover {
+    border-top: dotted 1px #222;
+    border-bottom: dotted 1px #222;
+    background: rgba(239, 116, 66, 0.7);
+    
+}
+.navbar-default .navbar-nav>li>a.userid:active {
+    color: #000;
+}
+
+
+
 .container form label,
 .container form .btn-gap {
     margin-top: 1.5em;
+}
+
+/* Posts */
+
+.new_post .glyphicon-plus {
+    font-size:0.8em;
 }
 
 .post .pub {
