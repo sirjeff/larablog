@@ -1,0 +1,4 @@
+*.* linguist-language=php
+
+.gitattributes  export-ignore
+.gitignore      export-ignore
