@@ -2,33 +2,46 @@
 
 **Test - Proof of Concept , Blog in Laravel**
 
-This is the MySQL version, and hope to soon release a MongoDB version.
+This is the code behind [OMI-Blog](https://blog.omi.nz/ "OMI-Blog")
+It was originally built as a demo for using Laravel in a real-world application.
+Over time it turned into a fully functional Blog and is still being built on.
+
+Technologies used thus far:
+- Laravel
+- TinyMCE
+- Axios
+- Bootstrap
+- jQuery
+- Parsley.js
 
 
-## Pre-reqs
+## Pre-requisites
 
 - MySQL
 - PHP
 - Composer
 
-## Instalation
+## Installation
 
 Currently (as this is still in 'dev') you can use:
 
 `composer create-project --stability dev sirjeff/larablog /FUL-PATH-TO-BLOG/`
 
-I have different distros of PHP on my Windows dev. machine, therfore I am using PHP in the CLI, e.g. :
+Example using install directory c:/home/fishpants:
+
+`composer create-project --stability dev sirjeff/larablog c:/home/fishpants`
+
+I have different distros of PHP on my Windows dev. machine, therefore I am using PHP in the CLI, e.g. :
 
 `/wamp/bin/php/php7.0.10/php.exe /bin/composer.phar create-project --stability dev sirjeff/larablog /home/larablog`
 
-Another example, installing to directory c:/home/fishpants on Windows:
 
-`composer create-project --stability dev sirjeff/larablog c:/home/fishpants`
 
 
 ## Set-up
 
 You'll have to do a few things before you can view the blog.
+
 The following code examples use the blog location as c:/home/fishpants, and the db as fishpants (same username and passwordy for the password)
 
 1. Start and connect to MySQL
@@ -78,6 +91,5 @@ DB_PASSWORD=passwordy
 6. View blog!
 
  `http://localhost:8000/`
- 
  
  
