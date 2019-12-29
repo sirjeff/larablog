@@ -7,10 +7,16 @@
 <div class="row">
     <div class="col-md-6">
         <div class="post_image">
-          @if ($post->image)
-          <img src="{{ asset('images/full/' . $post->image) }}" alt="{{$post->image}}" width="100%">
+          @if ($post->video)
+           <video poster="{{ '/images/full/' . $post->image }}"  controls="true" width="100%" type="video/mp4">
+            <source src="{{ '/video/' . $post->video }}" type="video/mp4">
+            @if ($post->video_sub)
+              <track default src="{{ '/video/' . $post->video_sub }}">
+            @endif
+            Your browser does not support the video tag.
+           </video>
           @else
-          <img src="https://omi.nz/bin/rnd/?img&{{ $post->id }}" alt="Image not found">
+           <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="100%">
           @endif
          </div>
     </div>
@@ -72,18 +78,19 @@
 	<div class="row">
 		<div id="comment-form" class="col-md-8 col-md-offset-2">
      <hr>
+     @if ( Auth::check() )
      <h4>Have your say ...</h4>
 			{{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) }}
 				
 				<div class="row">
 					<div class="col-md-6">
 						{{ Form::label('name', "Name:") }}
-						{{ Form::text('name', null, ['class' => 'form-control']) }}
+						{{ Form::text('name', Auth::user()->name, ['class' => 'form-control']) }}
 					</div>
 
 					<div class="col-md-6">
 						{{ Form::label('email', 'Email:') }}
-						{{ Form::text('email', null, ['class' => 'form-control']) }}
+						{{ Form::text('email', Auth::user()->email, ['class' => 'form-control']) }}
 					</div>
 
 					<div class="col-md-12">
@@ -95,6 +102,9 @@
 				</div>
 
 			{{ Form::close() }}
+     @else
+     <h4>Please register or sign-in to comment</h4>
+     @endif
 		</div>
 	</div>
 

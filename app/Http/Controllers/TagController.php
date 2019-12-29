@@ -12,6 +12,7 @@ class TagController extends Controller
 {
 
     public function __construct() {
+        $this->middleware('check_role');
         $this->middleware('auth');
     }
 

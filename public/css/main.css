@@ -1,4 +1,3 @@
-
 html,body{
     height:100%;
 }
@@ -31,6 +30,10 @@ html,body{
     min-height: 100%;
 }
 
+.container-fluid {
+    padding: 0 1em;
+}
+
 .stretch{
     width: 100%;
     overflow: auto;
@@ -44,7 +47,6 @@ html,body{
 
 
 .hero-cover {
-    background-image:url("/images/ui/GreyLynnCountdownChimeny_20180915_171131.jpg");
     background-position: center bottom;
     background-size: cover;
     background-attachment: fixed;
@@ -59,21 +61,25 @@ html,body{
 /* Nav Bar */
 .collapse.in {
     display: inline-block;
+    background:#a2020a;
 }
 
 .navbar {
     padding-left: 1em;
-    height:7em;
+    height: 8em;
     min-height:fit-content;
-    background-color:#c45353;
     border:none;
     border-radius: 0;
+    background-image: url("/images/ui/header_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
 }
 
 
 .navbar .navbar-toggle {
-    padding: 0.3em;
-    top: 1em;
+  padding: 0.4em;
+  top: 1.6em;
 }
 
 .navbar .navbar-toggle .glyphicon-menu-hamburger {
@@ -81,33 +87,36 @@ html,body{
     top: 2px;
 }
 
+.navbar-default .navbar-toggle {
+    background: rgba(222,222,222,0.5);
+    color: #fff;
+}
+
+
 .navbar .navbar-collapse {
-    background:rgba(255,255,255,0.9);
-    background: #c45353;
-    float: right;
-    margin: 0;
+ float: right;
+ margin: 0;
     
 }
-/*
-.navbar .navbar-right {
-    background: #fff;
-    background: rgba(239, 116, 66, 0.24);
-}
-*/
+
 .navbar-nav .open .dropdown-menu {
     background: #fff;
 }
 
-.navbar-brand {
- height:5em;
- padding:1em;
+a.navbar-brand {
+ position: relative;
+ margin-left: 0 !important;
 }
 
-.navbar-brand img.logo {
-    height:5em;
-    border:0;
-    top:-1em;
-    position:relative;
+
+
+.navbar-brand img.logo.png {
+    height: 3em;
+    width: 3em;
+    border: 0;
+    top: 1.5em;
+    left: 2em;
+    position: absolute;
 }
 
 
@@ -143,6 +152,18 @@ nav .author-image {
     margin-right: 0.5em;
     top: -0.5em;
     position: relative;
+}
+
+.glyphicon.glyphicon-search { top:0}
+.navbar-form {
+  padding: 9px;
+  margin:0;
+  background: rgba(239, 116, 66, 0.2);
+}
+
+.btn.glyphicon-search {
+  margin-left: -38px;
+  display: inline-block;
 }
 
 
@@ -181,6 +202,12 @@ nav .author-image {
 .container form .btn-gap {
     margin-top: 1.5em;
 }
+
+/* Config */
+
+table.config label {display:none}
+table.config span.glyphicon-floppy-disk {border-bottom:solid 1px #fff}
+input[type=submit].btn-block.config_update{}
 
 /* Posts */
 
@@ -298,6 +325,7 @@ nav .author-image {
 .post_deets dl.dl-horizontal dt {
     text-align: left;
     width: 8em;
+    float: left;
 }
 
 
@@ -338,6 +366,14 @@ a.archive-link {
     position: absolute;
     bottom: 1em;
 }
+
+
+.about { margin-top: 4em}
+.about p {
+ font-size: 2em;
+ line-height: 2;
+}
+
 
 .footsm {
   position: relative;
@@ -423,3 +459,19 @@ a.btn-gap {
 .comments-title>span {
  margin-right: 15px;
 }
+
+.nav b{font-weight: normal;display: inline-block;}
+
+
+@media (max-width: 860px) {
+ .nav b{display: none;}
+}
+
+
+@media (max-width: 767px) {
+ .btn.glyphicon-search {
+  display: none;
+ }
+ .nav b{display: inline-block;}
+}
+

@@ -1,7 +1,6 @@
-<h3>You Have a New Contact Via the Contact Form</h3>
+<h3>New Message via your contact form</h3>
+<p>Sent from {{ $email }}</p>
+<hr>
+<pre>{{ $bodyMessage }}</pre>
+<hr>
 
-<div>
-	{{ $bodyMessage }}
-</div>
-
-<p>Sent via {{ $email }}</p>

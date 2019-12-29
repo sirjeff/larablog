@@ -15,23 +15,22 @@ use Storage;
 use Illuminate\Support\Facades\File;
 use Auth;
 
-class PostController extends Controller
-{
+class PostController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $posts = Post::orderBy('id', 'desc')->paginate(7);
-        return view('posts/index')->with('posts', $posts);
-    }
+ public function __construct() {
+  $this->middleware('check_role');
+  $this->middleware('auth');
+ }
+
+ /**
+ * Display a listing of the resource.
+ *
+ * @return \Illuminate\Http\Response
+ */
+ public function index() {
+  $posts = Post::orderBy('id', 'desc')->paginate(7);
+  return view('posts/index')->with('posts', $posts);
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -59,6 +58,8 @@ class PostController extends Controller
             'slug'        => 'required|alpha_dash|min:5|max:255',
             'category_id' => 'required|integer',
             'body'        => 'required',
+            'video' => 'sometimes',
+            'video_sub' => 'sometimes',
             'featured_image' => 'sometimes|image'
         ));
         
@@ -74,6 +75,18 @@ class PostController extends Controller
             $post->summary     = Purifier::clean($request->summary);
         } else {
             $post->summary     = Purifier::clean($request->body);
+        }
+        if ($request->hasFile('video')) {
+            $video = $request->file('video');
+            $video_filename = time()."-$request->slug.".$video->getClientOriginalExtension(); # this is the name that is stored in the db
+            Storage::PutFileAs("video/" ,$video,$video_filename);
+            $post->video = $video_filename;
+        }
+        if ($request->hasFile('video_sub')) {
+            $video_sub = $request->file('video_sub');
+            $video_sub_filename = time()."-$request->slug.".$video_sub->getClientOriginalExtension(); # this is the name that is stored in the db
+            Storage::PutFileAs("video/" ,$video_sub,$video_sub_filename);
+            $post->video_sub = $video_sub_filename;
         }
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
@@ -135,18 +148,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-        
-
         $this->validate($request, array(
             'title' => 'required|max:255',
             'slug' => "required|alpha_dash|min:5|max:255|unique:posts,slug,$id",
             'category_id' => 'required|integer',
             'body' => 'required',
+            #'video' => 'video',
             'featured_image' => 'image'
         ));
-        
-        
+                
         $post = Post::find($id);
         $post->title       = $request->input('title');
         $post->slug        = $request->input('slug');
@@ -163,11 +173,39 @@ class PostController extends Controller
         } else {
             $post->featured = 0;
         }
-        #$post->sticky      = $request->sticky;     #2Do: add these to update form
-        #$post->featured    = $request->featured;    
+        
+        if(env('APP_OS')=='nix'){
+         $slash='/';
+        }else{
+         $slash='\\';
+        }
+
+        if ($request->hasFile('video')) {
+            $video = $request->file('video');
+            $video_filename = time()."-$request->slug.".$video->getClientOriginalExtension(); # this is the name that is stored in the db
+            Storage::PutFileAs("video$slash" ,$video,$video_filename);
+            $old_videoFilename = $post->video;
+            $post->video = $video_filename;
+            $full_oldVid_path = public_path("video")."$slash$old_videoFilename";
+            if (! Storage::exists($full_oldVid_path)) {
+             File::delete($full_oldVid_path);
+            }
+            
+        }
+
+        if ($request->hasFile('video_sub')) {
+            $video_sub = $request->file('video_sub');
+            $video_sub_filename = time()."-$request->slug.".$video_sub->getClientOriginalExtension(); # this is the name that is stored in the db
+            Storage::PutFileAs("video$slash" ,$video_sub,$video_sub_filename);
+            $old_videoSubFilename = $post->video_sub;
+            $post->video_sub = $video_sub_filename;
+            $full_oldVidSub_path = public_path("video")."$slash$old_videoSubFilename";
+            if (! Storage::exists($full_oldVidSub_path)) {
+             File::delete($full_oldVidSub_path);
+            }            
+        }     
+                
         if ($request->hasFile('featured_image')) {
-
-
             $image = $request->file('featured_image');
             $filename = time()."-$request->slug.".$image->getClientOriginalExtension(); # this is the name that is stored in the db
             $location = public_path("images"); # full path to public dir, to where images are to be saved
@@ -193,32 +231,52 @@ class PostController extends Controller
             $post->tags()->sync([]);
         }
         
-        Session::flash('success', 'Blog post updated');
+        Session::flash("success", "Blog post updated");
         
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route("posts.show", $post->id);
 
     }
 
-    /**
-     * Remove post from database and images from public/images.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $post = Post::find($id);
-        $post->tags()->detach();
-        $location = public_path("images");
-        $img_dirs = ['full','medium','thumb','tiny'];
-        foreach($img_dirs as $img_dir) {
-            $full_img_path = "$location/$img_dir/".$post->image;
-            if (! Storage::exists($full_img_path)) {
-                File::delete($full_img_path);
-            }
-        }
-        $post->delete();
-        Session::flash('success', 'Blog post $id deleted.');
-        return redirect()->route('posts.index');
-    }
+ /**
+ * Remove post from database
+ * & images from public/images
+ * & video + subs from public/video
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+ public function destroy($id){
+  if(env("APP_OS")=="nix"){
+   $slash='/';
+  }else{
+   $slash='\\';
+  }
+  #  
+  $post = Post::find($id);
+  $post->tags()->detach();
+  #
+  $img_dirs = ["full","medium","thumb","tiny"];
+  foreach($img_dirs as $img_dir) {
+   $full_img_path = public_path("images") . "$slash$img_dir$slash" . $post->image;
+   if (! Storage::exists($full_img_path)) {
+    File::delete($full_img_path);
+   }
+  }
+  #
+  $oldVidFilename = $post->video;
+  $fullVidPath = public_path("video") . "$slash$oldVidFilename";
+  if (! Storage::exists($fullVidPath)) {
+   File::delete($fullVidPath);
+  }
+  #
+  $oldVidSubFilename = $post->video_sub;
+  $fullVidSubPath = public_path("video") . "$slash$oldVidSubFilename";
+  if (! Storage::exists($fullVidSubPath)) {
+   File::delete($fullVidSubPath);
+  }
+  #
+  $post->delete();
+  Session::flash("success", "Blog post $id deleted.");
+  return redirect()->route("posts.index");
+ }
 }

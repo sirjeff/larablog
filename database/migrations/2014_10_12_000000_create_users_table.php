@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email',100)->unique();
+            $table->integer('role')->default(2);# ID for role, default 2 for comments only
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -1,0 +1,43 @@
++--------+-----------+----------------------------+-----------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                        | Name                  | Action                                                                 | Middleware   |
++--------+-----------+----------------------------+-----------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                          |                       | App\Http\Controllers\PagesController@getIndex                          | web          |
+|        | GET|HEAD  | about                      |                       | App\Http\Controllers\PagesController@getAbout                          | web          |
+|        | GET|HEAD  | api/user                   |                       | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | auth/login                 |                       | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | auth/login                 |                       | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | GET|HEAD  | auth/logout                | logout                | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | GET|HEAD  | auth/register              |                       | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST      | auth/register              |                       | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | blog/{slug}                | blog.single           | App\Http\Controllers\BlogController@getSingle                          | web          |
+|        | GET|HEAD  | categories                 | categories.index      | App\Http\Controllers\CategoryController@index                          | web,auth     |
+|        | POST      | categories                 | categories.store      | App\Http\Controllers\CategoryController@store                          | web,auth     |
+|        | GET|HEAD  | categories/create          | categories.create     | App\Http\Controllers\CategoryController@create                         | web,auth     |
+|        | GET|HEAD  | categories/{category}      | categories.show       | App\Http\Controllers\CategoryController@show                           | web,auth     |
+|        | PUT|PATCH | categories/{category}      | categories.update     | App\Http\Controllers\CategoryController@update                         | web,auth     |
+|        | DELETE    | categories/{category}      | categories.destroy    | App\Http\Controllers\CategoryController@destroy                        | web,auth     |
+|        | GET|HEAD  | categories/{category}/edit | categories.edit       | App\Http\Controllers\CategoryController@edit                           | web,auth     |
+|        | POST      | contact                    |                       | App\Http\Controllers\PagesController@postContact                       | web          |
+|        | GET|HEAD  | contact                    |                       | App\Http\Controllers\PagesController@getContact                        | web          |
+|        | GET|HEAD  | home                       |                       | App\Http\Controllers\PagesController@getIndex                          | web          |
+|        | GET|HEAD  | login                      |                       | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                      | login                 | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | password/email             | auth.password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | POST      | password/reset             |                       | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | password/reset             | auth.password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | GET|HEAD  | password/reset/{token}     | password.reset        | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | GET|HEAD  | posts                      | posts.index           | App\Http\Controllers\PostController@index                              | web,auth     |
+|        | POST      | posts                      | posts.store           | App\Http\Controllers\PostController@store                              | web,auth     |
+|        | GET|HEAD  | posts/create               | posts.create          | App\Http\Controllers\PostController@create                             | web,auth     |
+|        | DELETE    | posts/{post}               | posts.destroy         | App\Http\Controllers\PostController@destroy                            | web,auth     |
+|        | PUT|PATCH | posts/{post}               | posts.update          | App\Http\Controllers\PostController@update                             | web,auth     |
+|        | GET|HEAD  | posts/{post}               | posts.show            | App\Http\Controllers\PostController@show                               | web,auth     |
+|        | GET|HEAD  | posts/{post}/edit          | posts.edit            | App\Http\Controllers\PostController@edit                               | web,auth     |
+|        | GET|HEAD  | tags                       | tags.index            | App\Http\Controllers\TagController@index                               | web,auth     |
+|        | POST      | tags                       | tags.store            | App\Http\Controllers\TagController@store                               | web,auth     |
+|        | GET|HEAD  | tags/create                | tags.create           | App\Http\Controllers\TagController@create                              | web,auth     |
+|        | GET|HEAD  | tags/{tag}                 | tags.show             | App\Http\Controllers\TagController@show                                | web,auth     |
+|        | PUT|PATCH | tags/{tag}                 | tags.update           | App\Http\Controllers\TagController@update                              | web,auth     |
+|        | DELETE    | tags/{tag}                 | tags.destroy          | App\Http\Controllers\TagController@destroy                             | web,auth     |
+|        | GET|HEAD  | tags/{tag}/edit            | tags.edit             | App\Http\Controllers\TagController@edit                                | web,auth     |
++--------+-----------+----------------------------+-----------------------+------------------------------------------------------------------------+--------------+

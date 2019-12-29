@@ -11,8 +11,48 @@
 	<script>
 		tinymce.init({
 			selector: 'textarea.tm',
-			plugins: 'link code',
-			menubar: false
+			plugins: 'link code fullscreen image',
+			menubar: 'view insert',
+     file_picker_types: 'file image media',
+     images_upload_url: '/upload',
+     image_prepend_url: '/',
+     image_advtab: true,
+     image_class_list: [
+      {title: 'Left', value: 'left'},
+      {title: 'Right', value: 'right'},
+      {title: 'Wrap Text', value: 'wrap'}
+     ],
+     image_description: true,
+     image_title: true,
+     image_dimensions: false,
+     typeahead_urls: false,
+     image_caption: true,
+     //convert_urls: false,
+     images_upload_handler: function (blobInfo, success, failure) {
+     var xhr, formData;
+     xhr = new XMLHttpRequest();
+     xhr.withCredentials = false;
+     xhr.open('POST', '/upload');
+     var token = '{{ csrf_token() }}';
+     xhr.setRequestHeader("X-CSRF-Token", token);
+     xhr.onload = function() {
+      var json;
+      if (xhr.status != 200) {
+          failure('HTTP Error: ' + xhr.status);
+          return;
+      }
+      json = JSON.parse(xhr.responseText);
+  
+      if (!json || typeof json.location != 'string') {
+          failure('Invalid JSON: ' + xhr.responseText);
+          return;
+      }
+      success(json.location);
+     };
+     formData = new FormData();
+     formData.append('file', blobInfo.blob(), blobInfo.filename());
+     xhr.send(formData);
+     },
 		});
 	</script>
 
@@ -47,9 +87,14 @@
                @endforeach
            </select>
           
-          
            {{ Form::label('featured_image','Upload Featured Image:') }}
            {{ Form::file('featured_image') }}
+
+           {{ Form::label('video','Upload optional video:') }}
+           {{ Form::file('video') }}
+
+           {{ Form::label('video_sub','Upload video subtitles:') }}
+           {{ Form::file('video_sub') }}
            
            
            {{ Form::label('body','Post:') }}

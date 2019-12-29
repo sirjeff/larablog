@@ -6,9 +6,21 @@
 
 	<div class="row">
 		<div class="col-md-8">
-     @if ($post->image)
-     <img src="{{ asset('images/full/' . $post->image) }}" alt="{{$post->image}}" width="400" class="text-center" border="0">
-     @endif
+
+          @if ($post->video)
+           <video poster="{{ '/images/full/' . $post->image }}"  controls width="100%">
+            <source src="{{ '/video/' . $post->video }}" type="video/mp4">
+            @if ($post->video_sub)
+              <track default src="{{ '/video/' . $post->video_sub }}">
+            @endif
+           </video>
+          @else
+           <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="400" class="text-center" border="0">
+          @endif
+          
+          
+     
+      
 			<h1>{{ $post->title }}</h1>
 			
 			<p class="lead">{!! $post->body !!}</p>
