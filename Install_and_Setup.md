@@ -36,38 +36,41 @@ After installing the project there are some steps you will need to do before you
 
 1. Start and connect to MySQL
 
-LaraBlog was built with MySQL for DB storage.
+   LaraBlog was built with MySQL for DB storage.
 
-Log-in to MYSQL (make sure it's running first!)
+   Log-in to MYSQL (make sure it's running first!)
 
-`mysql -u <<Your DB Username>> -p <<Your DB Password>>`
+   `mysql -u <<Your DB Username>> -p <<Your DB Password>>`
 
-(use your admin user name and password)
+   (use your admin user name and password)
 
 2. Create the db and user
 
-Whilst logged into mysql run the following:
+   Whilst logged into mysql run the following:
+
 ```mysql
 CREATE DATABASE fishpants;
 CREATE USER 'fishpants'@'localhost' IDENTIFIED WITH mysql_native_password AS 'passwordy';
 GRANT USAGE ON *.* TO 'fishpants'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `fishpants`.* TO 'fishpants'@'localhost';
 ```
-**fishpants** and **passwordy** are just (poor) examples!
+
+   **fishpants** and **passwordy** are just (poor) examples!
 
 3. Import DB
 
-There is an SQL file in the root directory of the project "`larablog.sql`"
+   There is an SQL file in the root directory of the project "`larablog.sql`"
 
-CD to the project directory and run :
+   CD to the project directory and run :
 
-`mysql -u fishpants -p fishpants < /home/fishpants/larablog.sql`
+   `mysql -u fishpants -p fishpants < /home/fishpants/larablog.sql`
 
-(this is using db name and directory from previous examples)
+   _(this is using db name and directory from previous examples)_
 
 
 4. Update .env with new db details
 
-e.g.
+   e.g.
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=localhost
@@ -79,30 +82,43 @@ DB_PASSWORD=passwordy
 
 5. Run your web server
 
-To keep things simple. You can launch the built in server:
+   To keep things simple. You can launch the built in server:
 
-`php artisan serve`
+   `php artisan serve`
 
-fromt within your project directory.
+   from within your project directory.
 
-This will start a web server on port 8000
+   This will start a web server on port 8000
 
-If you want to set up your on web server or run a virtual host in Apache 
-see the notes in the ["Other bits and pieces"](#Other-bits-and-pieces) section
+   If you want to set up your on web server or run a virtual host in Apache.
+   See the notes in the ["Other bits and pieces"](#Other-bits-and-pieces) section
 
 6. View your blog
-In your browser go to http://127.0.0.1:8000
 
+   In your browser go to http://127.0.0.1:8000
 
 7. Sign in as admin
-Sign-in with admin details:
 
-user: admin@madeup.domain.co.nz
-password: password
+   Sign-in with admin details:
 
+   user: admin@madeup.domain.co.nz
+
+   password: password
+
+> Note: There is no current 'change password' option. For now you have to modify this via the database. However, you could register a new account via the blog register feature. Once done you could modify the role for that user in the database from "2" to "1"
 
  
 ## Other-bits-and-pieces
+
+### Where stuff is
+
+Firstly modify the basics in the blog. Log in as admin and go to the 'configuration' page.
+
+Styles and Images are in the "public" directory.
+
+The HTML for each page are blade files (part of the Laravel framework) in the "resources/views" directory.
+
+The logic for the blog is mostly kept in the "app" directory. I would recommend not making changes here. Use the "Watch" button to keep up-to-date with changes. The logic will be changing to add new features and fix old ones.
 
 ### Basic Apache Virtual Host setup
 
