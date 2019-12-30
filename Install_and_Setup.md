@@ -1,4 +1,4 @@
-#Install and Set Up Instructions
+# Install and Set Up Instructions
 
 More detail given here than in the 'Read Me' file
 
@@ -6,14 +6,14 @@ More detail given here than in the 'Read Me' file
 
 Install the project using composer :
 
-In this example I'm installing **LaraBlog** into the `/home/fishpants directory`
+In this example I'm installing **LaraBlog version 1.1** into the `/home/fishpants directory`
 
-`C:\>composer create-project sirjeff/larablog /home/fishpants 1.1
+`C:\>composer create-project sirjeff/larablog /home/fishpants 1.1`
 
-Composer downloads and installs the project ... "Installing sirjeff/larablog (v1.1)"
-Some info appears during the install and it should end by setting a unique application key that it adds to the `.env` file :
+Composer downloads and installs the project ... "Installing sirjeff/larablog (v1.1)" ... it will say.
+More info appears during the install and it should end by setting a unique application key that it adds to the `.env` file :
 
-"Application key [base64:X4cotokTA8AXyZd6W5BZBGnmysTVfnXL9ulPACtddh4=] set successfully
+"Application key [base64:X4cotokTA8AXyZd6W5BZBGnmysTVfnXL9ulPACtddh4=] set successfully"
 
 If you don't have composer in your path, you can download [composer.phar from https://getcomposer.org/download/](https://getcomposer.org/download/)
 
@@ -21,21 +21,44 @@ And run it on CLI like so:
 
 `C:\>/wamp/bin/php/php7.0.10/php.exe /bin/composer.phar create-project sirjeff/larablog /home/fishpants 1.1`
 
-This example also shows how to run composer with any installed version of PHP
+This example also shows how to run Composer with any installed version of PHP
 
-_( Note: You can omit the Windows **c:** from path names on CLI (and in most scripts) as long as you use forward slash **/** instead of backslash_
+> _( Note: In Windows you can omit the **c:** from path names on CLI (and in most scripts) as long as you use forward slash **/** instead of backslash._
+> _Example: **c:/home/peter/docs** is the same as **/home/peter/docs**_
 
-_Example: **c:/home/peter/docs** is the same as **/home/peter/docs** _
-
-_But Note in this note, the auto-complete using the TAB key doesn't work in CLI when you use a slash. )_
+> _But Note in this note, the auto-complete using the TAB key doesn't work in CLI when you use a slash. )_
 
 
 
 
 ## Set-up
 
-1 Create DB table
-2 Import DB
+After installing the project there are some steps you will need to do before you can view the blog.
+
+
+1. Start and connect to MySQL
+
+LaraBlog was built with MySQL for DB storage.
+
+Log-in to MYSQL (make sure it's running first!)
+
+`mysql -u <<Your DB Username>> -p <<Your DB Password>>`
+
+(use your admin user name and password)
+
+2. Create the db and user
+
+Whilst logged into mysql run the following:
+```mysql
+CREATE DATABASE fishpants;
+CREATE USER 'fishpants'@'localhost' IDENTIFIED WITH mysql_native_password AS 'passwordy';
+GRANT ALL PRIVILEGES ON *.* TO 'fishpants'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON `fishpants`.* TO 'fishpants'@'localhost';
+```
+**fishpants** and **passwordy** are just (poor) examples!
+
+3. Import DB
+
 
 Sign-in with admin details:
 
@@ -44,25 +67,26 @@ password: password
 
 
 
-Basic Apache Virtual Host setup
 
- ```apache
  
- <VirtualHost *:80>
+## Other bits and pieces
+
+### Basic Apache Virtual Host setup
+
+```apache
+<VirtualHost *:80>
   ServerName larablog
   DocumentRoot "/home/larablog/public"
   <Directory "/home/larablog/public">
-   AllowOverride All
+    AllowOverride All
   </Directory>
   LogLevel warn
   ErrorLog "/home/larablog/log/err.log"
   CustomLog "/home/larablog/log/acs.log" combined
- </VirtualHost>
+</VirtualHost>
 
- ```
+```
  
-## Notes
-
 ### Video format
 
 The most reliable format/codec for your online videos is H.264/AAC :
