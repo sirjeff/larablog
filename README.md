@@ -25,7 +25,7 @@ Technologies used thus far:
 
 `composer create-project sirjeff/larablog /FUL-PATH-TO-BLOG/ 1.1`
 
-[Please see 'Install_and_Setup'](../blob/master/Install_and_Setup.md)
+[Please see 'Install_and_Setup'](../master/Install_and_Setup.md)
 
 ## To-Do
 
@@ -39,7 +39,7 @@ I will be adding some new features, and making the blog look a bit nicer.
 
 Please use the contact form on "OMI-Blog" :
 
-http://blg.omi.nz/contact
+https://blg.omi.nz/contact
 
 Thank You
  -SJ-
