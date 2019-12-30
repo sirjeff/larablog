@@ -23,10 +23,9 @@ And run it on CLI like so:
 
 This example also shows how to run Composer with any installed version of PHP
 
-> _( Note: In Windows you can omit the **c:** from path names on CLI (and in most scripts) as long as you use forward slash **/** instead of backslash._
-> _Example: **c:/home/peter/docs** is the same as **/home/peter/docs**_
-
-> _But Note in this note, the auto-complete using the TAB key doesn't work in CLI when you use a slash. )_
+> **Note:** In Windows you can omit the **c:** from path names on CLI (and in most scripts) as long as you use forward slash **/** instead of backslash.   
+> Example: **c:/home/peter/docs** is the same as **/home/peter/docs**    
+> But Note in this note, the auto-complete using the TAB key doesn't work in CLI when you use a slash.
 
 
 
@@ -34,7 +33,6 @@ This example also shows how to run Composer with any installed version of PHP
 ## Set-up
 
 After installing the project there are some steps you will need to do before you can view the blog.
-
 
 1. Start and connect to MySQL
 
@@ -52,24 +50,59 @@ Whilst logged into mysql run the following:
 ```mysql
 CREATE DATABASE fishpants;
 CREATE USER 'fishpants'@'localhost' IDENTIFIED WITH mysql_native_password AS 'passwordy';
-GRANT ALL PRIVILEGES ON *.* TO 'fishpants'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-GRANT ALL PRIVILEGES ON `fishpants`.* TO 'fishpants'@'localhost';
+GRANT USAGE ON *.* TO 'fishpants'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `fishpants`.* TO 'fishpants'@'localhost';
 ```
 **fishpants** and **passwordy** are just (poor) examples!
 
 3. Import DB
 
+There is an SQL file in the root directory of the project "`larablog.sql`"
 
+CD to the project directory and run :
+
+`mysql -u fishpants -p fishpants < /home/fishpants/larablog.sql`
+
+(this is using db name and directory from previous examples)
+
+
+4. Update .env with new db details
+
+e.g.
+```
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=fishpants
+DB_USERNAME=fishpants
+DB_PASSWORD=passwordy 
+```
+
+5. Run your web server
+
+To keep things simple. You can launch the built in server:
+
+`php artisan serve`
+
+fromt within your project directory.
+
+This will start a web server on port 8000
+
+If you want to set up your on web server or run a virtual host in Apache 
+see the notes in the ["Other bits and pieces"](#Other-bits-and-pieces) section
+
+6. View your blog
+In your browser go to http://127.0.0.1:8000
+
+
+7. Sign in as admin
 Sign-in with admin details:
 
 user: admin@madeup.domain.co.nz
 password: password
 
 
-
-
  
-## Other bits and pieces
+## Other-bits-and-pieces
 
 ### Basic Apache Virtual Host setup
 
