@@ -11,5 +11,6 @@ npm-debug.log
 yarn-error.log
 .env
 #/bup
+#/node_modules
 /tmp
 /log
