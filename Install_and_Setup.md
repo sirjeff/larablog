@@ -37,7 +37,9 @@ In this example, we install the branch 'gitinstall' into the `c:/home/omiblog/ww
 - `git clone -b gitinstall git@github.com:sirjeff/larablog.git c:/home/omiblog/www`
 - `cd c:/home/omiblog/www`
 - `composer install`
+- `php artisan serve`
 
+Then browse to http://127.0.0.1:8000
 
 
 
