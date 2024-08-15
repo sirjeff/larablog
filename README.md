@@ -25,7 +25,7 @@ Technologies used thus far:
 
 `composer create-project sirjeff/larablog /FUL-PATH-TO-BLOG/ 1.1`
 
-[Please see 'Install_and_Setup'](../master/Install_and_Setup.md)
+[Please see 'Install_and_Setup'](Install_and_Setup.md)
 
 ## To-Do
 

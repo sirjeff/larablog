@@ -4,6 +4,8 @@ More detail given here than in the 'Read Me' file
 
 ## Installing
 
+### Version 1 - the Laravel way
+
 Install the project using composer :
 
 In this example I'm installing **LaraBlog version 1.1** into the `/home/fishpants directory`
@@ -26,6 +28,16 @@ This example also shows how to run Composer with any installed version of PHP
 > **Note:** In Windows you can omit the **c:** from path names on CLI (and in most scripts) as long as you use forward slash **/** instead of backslash.   
 > Example: **c:/home/peter/docs** is the same as **/home/peter/docs**    
 > But Note in this note, the auto-complete using the TAB key doesn't work in CLI when you use a slash.
+
+
+### Version 2 - the normal way
+
+In this example, we install the branch 'gitinstall' into the `c:/home/omiblog/www` directory
+
+- `git clone -b gitinstall git@github.com:sirjeff/larablog.git c:/home/omiblog/www`
+- `cd c:/home/omiblog/www`
+- `composer install`
+
 
 
 
