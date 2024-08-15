@@ -9,6 +9,7 @@
 - install instruction corrected ... clone project and compose!
 - start tagging
 - start merging branches in
+- touched release.md
 
 ## 1.0.0 2019/07/04
 
