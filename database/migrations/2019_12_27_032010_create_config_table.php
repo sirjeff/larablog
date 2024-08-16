@@ -15,7 +15,7 @@ class CreateConfigTable extends Migration
     {
         Schema::create('config', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type', array('text,', 'html', 'file')->nullable()->change()->default('text'));
+            $table->enum('type', array('text,', 'file')->nullable()->change());
             $table->string('name',255); # variable name
             $table->text('value'); # variable value
             $table->text('description'); # explain what this name/value is for

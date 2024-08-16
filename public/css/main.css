@@ -162,8 +162,9 @@ nav .author-image {
 }
 
 .btn.glyphicon-search {
-  margin-left: -38px;
+  margin-left: -40px;
   display: inline-block;
+  border-color: transparent;
 }
 
 
@@ -367,13 +368,11 @@ a.archive-link {
     bottom: 1em;
 }
 
-
 .about { margin-top: 4em}
 .about p {
  font-size: 2em;
  line-height: 2;
 }
-
 
 .footsm {
   position: relative;

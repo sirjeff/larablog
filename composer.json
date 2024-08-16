@@ -9,7 +9,6 @@
       "role": "Developer"
     }],
     "type": "demo",
-    "minimum-stability": "dev",
     "support": {"issues": "https://github.com/sirjeff/larablog/issues"},
     "require": {
         "php": ">=7.4.33",
