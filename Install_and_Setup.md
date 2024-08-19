@@ -32,11 +32,15 @@ This example also shows how to run Composer with any installed version of PHP
 
 ### Version 2 - the normal way
 
-In this example, we install the branch 'gitinstall' into the `c:/home/omiblog/www` directory
+To install the branch `gitinstall` into the `c:/home/omiblog/www` directory
 
 - `git clone -b gitinstall git@github.com:sirjeff/larablog.git c:/home/omiblog/www`
 - `cd c:/home/omiblog/www`
 - `composer install`
+
+
+Start the server/app :
+
 - `php artisan serve`
 
 Then browse to http://127.0.0.1:8000
