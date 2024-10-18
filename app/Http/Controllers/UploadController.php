@@ -6,7 +6,7 @@ class UploadController extends Controller {
 
 	public function uploadImage() {
    // Allowed origins to upload images
-   $accepted_origins = array(env("APP_URL","http://localhost/"));
+   $accepted_origins = array(env("APP_URL","https://localhost/"));
    
    // Images upload path
    $imageFolder = "images/content/";

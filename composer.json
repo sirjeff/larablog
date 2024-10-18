@@ -40,18 +40,18 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php74 -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "php7.4 -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "php74 artisan key:generate"
+            "php7.4 artisan key:generate"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php74 artisan optimize"
+            "php7.4 artisan optimize"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php74 artisan optimize"
+            "php7.4 artisan optimize"
         ]
     },
     "config": {
