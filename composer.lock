@@ -1730,16 +1730,16 @@
         },
         {
             "name": "sirjeff/htmlpurifier",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sirjeff/htmlpurifier.git",
-                "reference": "ba3f141d88e982200515e1923cbdeecc3495907a"
+                "reference": "830dbfb5afec312d5d1e58c18421a24b5c0deff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sirjeff/htmlpurifier/zipball/ba3f141d88e982200515e1923cbdeecc3495907a",
-                "reference": "ba3f141d88e982200515e1923cbdeecc3495907a",
+                "url": "https://api.github.com/repos/sirjeff/htmlpurifier/zipball/830dbfb5afec312d5d1e58c18421a24b5c0deff4",
+                "reference": "830dbfb5afec312d5d1e58c18421a24b5c0deff4",
                 "shasum": ""
             },
             "require": {
@@ -1773,10 +1773,10 @@
                 "html"
             ],
             "support": {
-                "source": "https://github.com/sirjeff/htmlpurifier/tree/1.0.0",
+                "source": "https://github.com/sirjeff/htmlpurifier/tree/1.0.1",
                 "issues": "https://github.com/sirjeff/htmlpurifier/issues"
             },
-            "time": "2024-10-21T06:35:36+00:00"
+            "time": "2024-10-21T10:57:42+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

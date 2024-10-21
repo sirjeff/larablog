@@ -474,3 +474,8 @@ a.btn-gap {
  .nav b{display: inline-block;}
 }
 
+
+code,pre {
+  font-family: courier,monospace
+}
+

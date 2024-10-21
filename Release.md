@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.2.6 *2024/10/22* [fix_body_strip]
+- fixed Font.php compatibility bug
+- corrected font for code,pre
+- 'code' and 'pre' allowed via Purifier
 
 ## 1.2.5 *2024/10/22* - direct hot fix! ... it never ends!!
 - fixed require for symfony/css-selector ... to ^5.4
