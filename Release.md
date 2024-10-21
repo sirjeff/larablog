@@ -1,6 +1,9 @@
 # Release Notes
 
 
+## 1.2.5 *2024/10/22* - direct hot fix! ... it never ends!!
+- fixed require for symfony/css-selector ... to ^5.4
+
 ## 1.2.4 *2024/10/22* - direct hot fix!
 - removed phpunit/phpunit
 - added back cache dir : /bootstrap/cache/.gitignore
