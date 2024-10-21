@@ -1,6 +1,9 @@
 # Release Notes
 
 
+## 1.2.3 *2024/10/22* - direct hot fix!
+- "phpunit/phpunit": "~5.7" to version "*"
+
 ## 1.2.2 *2024/10/22* [fix_tinymce]
 - Using TinyMCE with API key - will need to find a fully free version!
 - Fixed incompatibility bug in 'ezyang\htmlpurifier' and now pointing towards custom 'sirjeff\htmlpurifier'
