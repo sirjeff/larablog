@@ -10,6 +10,12 @@
     }],
     "type": "demo",
     "support": {"issues": "https://github.com/sirjeff/larablog/issues"},
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/sirjeff/htmlpurifier"
+      }
+    ],
     "require": {
         "php": ">=7.4.33",
         "intervention/image": "^2.5",
@@ -18,7 +24,11 @@
         "laravelcollective/html": "5.4.*",
         "mews/purifier": "^2.1",
         "tinymce/tinymce": ">= 4",
-        "twbs/bootstrap": "3.3.6"
+        "twbs/bootstrap": "3.3.6",
+        "sirjeff/htmlpurifier": "1.0.0"
+    },
+    "replace": {
+      "ezyang/htmlpurifier": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

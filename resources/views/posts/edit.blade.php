@@ -3,7 +3,7 @@
 
 @section('css')
  {!! Html::style('/css/select2.min.css') !!}
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/wtzz4a7ar21h8qcld4c2mfpdqc1qyh1cyl2izch9ann1noa3/tinymce/4/tinymce.min.js" referrerpolicy="origin"></script>
 
 	<script>
 		tinymce.init({
