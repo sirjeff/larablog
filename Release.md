@@ -1,5 +1,10 @@
 # Release Notes
 
+
+## 1.2.2 *2024/10/22* [fix_tinymce]
+- Using TinyMCE with API key - will need to find a fully free version!
+- Fixed incompatibility bug in 'ezyang\htmlpurifier' and now pointing towards custom 'sirjeff\htmlpurifier'
+
 ## 1.2.1 *2024/10/18* [setupinstall]
 - cleaning up code, removing unrequired images and git-ignoring them
 - fixes for bugs due to compatibility running on new soft/hardware
