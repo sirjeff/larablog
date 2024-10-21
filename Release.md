@@ -1,6 +1,10 @@
 # Release Notes
 
 
+## 1.2.4 *2024/10/22* - direct hot fix!
+- removed phpunit/phpunit
+- added back cache dir : /bootstrap/cache/.gitignore
+
 ## 1.2.3 *2024/10/22* - direct hot fix!
 - "phpunit/phpunit": "~5.7" to version "*"
 
