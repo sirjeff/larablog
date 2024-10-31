@@ -3,56 +3,6 @@
 
 @section('css')
  {!! Html::style('/css/select2.min.css') !!}
-  <script src="https://cdn.tiny.cloud/1/wtzz4a7ar21h8qcld4c2mfpdqc1qyh1cyl2izch9ann1noa3/tinymce/4/tinymce.min.js" referrerpolicy="origin"></script>
-
-	<script>
-		tinymce.init({
-			selector: 'textarea.tm',
-			plugins: 'link code fullscreen image',
-			menubar: 'view insert',
-     file_picker_types: 'file image media',
-     images_upload_url: '/upload',
-     image_prepend_url: '/',
-     image_advtab: true,
-     image_class_list: [
-      {title: 'Left', value: 'left'},
-      {title: 'Right', value: 'right'},
-      {title: 'Wrap Text', value: 'wrap'}
-     ],
-     image_description: true,
-     image_title: true,
-     image_dimensions: false,
-     typeahead_urls: false,
-     image_caption: true,
-     //convert_urls: false,
-     images_upload_handler: function (blobInfo, success, failure) {
-     var xhr, formData;
-     xhr = new XMLHttpRequest();
-     xhr.withCredentials = false;
-     xhr.open('POST', '/upload');
-     var token = '{{ csrf_token() }}';
-     xhr.setRequestHeader("X-CSRF-Token", token);
-     xhr.onload = function() {
-      var json;
-      if (xhr.status != 200) {
-          failure('HTTP Error: ' + xhr.status);
-          return;
-      }
-      json = JSON.parse(xhr.responseText);
-  
-      if (!json || typeof json.location != 'string') {
-          failure('Invalid JSON: ' + xhr.responseText);
-          return;
-      }
-      success(json.location);
-     };
-     formData = new FormData();
-     formData.append('file', blobInfo.blob(), blobInfo.filename());
-     xhr.send(formData);
-     },
-		});
-	</script>
-   
 @endsection
 
 
@@ -91,7 +41,7 @@
            
                     
             {{ Form::label('body', 'Post:') }}
-            {{ Form::textarea('body', null, ["class" => 'form-control tm']) }}
+            {{ Form::textarea('body', null, ["class" => 'form-control', "id" => 'richtext_postedit']) }}
             
             {{ Form::label('summary','Summary:') }}
             {{ Form::textarea('summary', null, ['class' => 'form-control']) }}
@@ -140,8 +90,27 @@
 @section('scripts')
   {!! Html::script('/js/select2.min.js') !!}
   <script>
-      $(document).ready(function(){
-          $(".select2-multi").select2();
-      });
+    $(document).ready(function(){
+      $(".select2-multi").select2();
+    });
+    
+    //https://alex-d.github.io/Trumbowyg/documentation/
+    $('#richtext_postedit').trumbowyg({
+      btns: [
+          ['viewHTML'],
+          ['undo', 'redo'], // Only supported in Blink browsers
+          ['formatting'],
+          ['strong', 'em', 'del', 'underline', 'preformatted'],
+          ['superscript', 'subscript'],
+          ['link'],
+          ['insertImage'],
+          ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+          ['unorderedList', 'orderedList'],
+          ['horizontalRule'],
+          ['removeformat'],
+          ['fullscreen']
+      ]
+    });
   </script>
+
 @endsection

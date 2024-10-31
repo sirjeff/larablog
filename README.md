@@ -8,7 +8,8 @@ Over time it turned into a fully functional Blog and is still being built on.
 
 Technologies used thus far:
 - Laravel
-- TinyMCE
+- ~~TinyMCE~~
+- Trumbowyg
 - Axios
 - Bootstrap
 - jQuery
@@ -18,14 +19,12 @@ Technologies used thus far:
 ## Pre-requisites
 
 - MySQL
-- PHP 7.4 with 'php7.4' as the path
- (this was back back then!)
-- Composer v1
+- PHP 7.4 with 'php7.4' as the path _... it's a long story. Once upon a time, ..... anyway [see 'Install_and_Setup'](Install_and_Setup.md) for more on this_
+- Composer v1 _IKR?! [See 'Install_and_Setup'](Install_and_Setup.md) for more on this_
 - Git
 
 ## Installation
 
-`composer create-project sirjeff/larablog /FULL-PATH-TO-BLOG/ 1.2.6`
 
 [Please see 'Install_and_Setup'](Install_and_Setup.md)
 
@@ -41,9 +40,18 @@ I will be adding some new features, and making the blog look a bit nicer.
 
 Please use the contact form on "OMI-Blog" :
 
-https://blg.omi.nz/contact
+<a href="https://blog.omi.nz/contact" target="_blank">https://blog.omi.nz/contact</a>
+
 
 Thank You
  -SJ-
  
  
+<style>
+*{background:#456 !important;color:#cde !important}
+a{color:#efefef !important;border-bottom:dotted 1px #dedede;text-decoration:none !important}
+a:hover{border-bottom-style:solid}
+i,em,i a,em a{color:#6ab !important}
+i a,em a{border-bottom:dotted 1px #6ab}
+code,pre{background:#466 !important;padding:3px !important}
+</style>
