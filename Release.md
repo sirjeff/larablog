@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.2.X *2024/XX/XX* [dev]
+- single.blade: added post ID
+- single.blade: added 'edit' link
+- some readme changes
+- inf.db more generic
+
 ## 1.2.6 *2024/10/22* [fix_body_strip]
 - fixed Font.php compatibility bug
 - corrected font for code,pre

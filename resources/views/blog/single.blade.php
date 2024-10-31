@@ -37,6 +37,14 @@
             <dd>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</dd>
         </dl>
         <dl class="dl-horizontal">
+            <dt>Post ID:</dt>
+            <dd>{{ $post->id }}
+            @if ( Auth::check() && Auth::user()->role === 1)
+            <a href="/posts/{{ $post->id }}/edit">[edit]</a>
+            @endif
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
             <dt>Tags:</dt>
             <dd>@foreach($post->tags as $tag)<span class="label label-default">{{ $tag->name }}</span>@endforeach</dd>
         </dl>

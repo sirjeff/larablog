@@ -7,6 +7,7 @@
 {{ Html::style('/css/main.css') }}
 <style>
  .hero-cover {background-image:url("/images/files/{{ \App\Config::where(['name' => 'hero_img'])->first()->value }}")}
+ .account-cover {background-image:url("/images/files/{{ \App\Config::where(['name' => 'hero_img'])->first()->value }}")}
 </style>
 @yield('css')
 <!--[if lt IE 9]>

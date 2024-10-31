@@ -2,7 +2,7 @@ nme~Laravel Blog
 dsc~Blog built on Laravel
 cms~Laravel
 type~www
-www~https://127.0.0.1
-dns~blog.omi.nz
+www~https://127.0.0.1:8000
+dns~localhost
 php~7
 composer~1

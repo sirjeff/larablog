@@ -18,12 +18,14 @@ Technologies used thus far:
 ## Pre-requisites
 
 - MySQL
-- PHP
-- Composer
+- PHP 7.4 with 'php7.4' as the path
+ (this was back back then!)
+- Composer v1
+- Git
 
 ## Installation
 
-`composer create-project sirjeff/larablog /FUL-PATH-TO-BLOG/ 1.1`
+`composer create-project sirjeff/larablog /FULL-PATH-TO-BLOG/ 1.2.6`
 
 [Please see 'Install_and_Setup'](Install_and_Setup.md)
 

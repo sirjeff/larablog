@@ -29,6 +29,7 @@
                <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim( Auth::user()->email))) . "?s=64&d=monsterid" }}" class="author-image" alt="gravatar image">{{ Auth::user()->name }} <span class="caret"></span>
            </a>
            <ul class="dropdown-menu">
+             <li><a href="{{ route('account.index') }}">Account</a></li>
              <li><a href="{{ route('posts.index') }}">All Posts</a></li>
              <li><a href="{{ route('posts.create') }}">Create Post</a></li>
              <li><a href="{{ route('categories.index') }}">All Categories</a></li>
@@ -45,6 +46,7 @@
            </a>
            <ul class="dropdown-menu">
              <li><a href="{{ route('logout') }}"><span class="glyphicon glyphicon-log-out"></span>Sign-out</a></li>
+             <li><a href="{{ route('account.index') }}">Account</a></li>
            </ul>
          </li>
          @else

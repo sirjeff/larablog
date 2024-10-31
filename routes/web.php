@@ -25,6 +25,12 @@ Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@log
 Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('auth/register', 'Auth\RegisterController@register');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/account', 'AccountController@index')->name('account.index');
+    Route::post('/account/update-profile', 'AccountController@updateProfile')->name('account.update-profile');
+    Route::post('/account/update-password', 'AccountController@updatePassword')->name('account.update-password');
+});
+
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('auth.password.email');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('auth.password.request');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
