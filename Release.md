@@ -1,10 +1,13 @@
 # Release Notes
 
-## 1.2.X *2024/XX/XX* [dev]
+## 1.2.7 *2024/10/31* [dev]
 - single.blade: added post ID
 - single.blade: added 'edit' link
 - some readme changes
 - inf.db more generic
+- added Account page (WIP)
+- start_service.php , auto starts app when accessing the site
+- stop_servcie.php - run this to stop the service (if started by the above process)
 
 ## 1.2.6 *2024/10/22* [fix_body_strip]
 - fixed Font.php compatibility bug
