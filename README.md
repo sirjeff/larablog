@@ -46,12 +46,4 @@ Please use the contact form on "OMI-Blog" :
 Thank You
  -SJ-
  
- 
-<style>
-*{background:#456 !important;color:#cde !important}
-a{color:#efefef !important;border-bottom:dotted 1px #dedede;text-decoration:none !important}
-a:hover{border-bottom-style:solid}
-i,em,i a,em a{color:#6ab !important}
-i a,em a{border-bottom:dotted 1px #6ab}
-code,pre{background:#466 !important;padding:3px !important}
-</style>
+
