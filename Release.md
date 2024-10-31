@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.2.8 *2024/11/01* [trumbowyg]
+- Added Trumbowyg to replace the most expensive TinyMCE
+- Removed TinyMCE ... Huzzah!
+- Tidied up md files
+
 ## 1.2.7 *2024/10/31* [dev]
 - single.blade: added post ID
 - single.blade: added 'edit' link
