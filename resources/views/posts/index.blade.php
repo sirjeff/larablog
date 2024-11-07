@@ -30,13 +30,19 @@
                 <tbody>
                     @foreach ($posts as $post)
                         <tr>
-                            <td><a href="{{ route('posts.show', $post->id) }}"><img src="{{ asset('images/tiny/' . $post->image) }}" alt="{{$post->image}}" width="100%"></a></td>
+                            <td><a href="{{ route('posts.show', $post->id) }}">
+                            @if ($post->image)
+                              <img src="{{ asset('images/tiny/' . $post->image) }}" alt="{{$post->image}}" width="100%">
+                            @else
+                              <img src="/images/ui/ni.gif" alt="No Image!" width="100%">
+                            @endif
+                            </a></td>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ substr(strip_tags($post->summary), 0, 50) }}{{ strlen(strip_tags($post->summary)) > 50 ? "..." : "" }}</td>
                             <td>
-                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>
-                             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                             <a href="{{ route('posts.show',    $post->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>
+                             <a href="{{ route('posts.edit',    $post->id) }}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                             </td>
                         </tr>
                     @endforeach

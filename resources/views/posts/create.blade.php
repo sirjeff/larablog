@@ -70,14 +70,24 @@
   
   <script>
       $(document).ready(function(){
-          $(".select2-multi").select2();
+          $(".select2-multi").select2();// fancy select fields
           $("#title").on('input', function(e) {
-              $("#slug").val($(this).val().replace(/-{2,}|_{2,}|[^\w]+/gi, '-').replace(/^-/, '').replace(/-$/, ''));
-          });
+              $("#slug").val(
+                $(this).val()
+                  .toLowerCase()
+                  .replace(/_{2,}|[^\w-]+/gi, '_')
+                  .replace(/^_+|_+$/g, '')
+              )
+          })
           $("#title").keypress(function(e){//update the slug from title
-              $("#slug").val(this.value+String.fromCharCode(e.which).replace(/-{2,}|_{2,}|[^\w]+/gi, '-').replace(/^-/, '').replace(/-$/, ''));
-          });
-      });
+              $("#slug").val(
+                (this.value+String.fromCharCode(e.which))
+                  .toLowerCase()
+                  .replace(/_{2,}|[^\w-]+/gi, '_')
+                  .replace(/^_+|_+$/g, '')
+              )
+          })
+      })
 
     //https://alex-d.github.io/Trumbowyg/documentation/
     $('#richtext_postadd').trumbowyg({

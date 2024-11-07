@@ -14,8 +14,10 @@
               <track default src="{{ '/video/' . $post->video_sub }}">
             @endif
            </video>
+          @elseif ($post->image)
+            <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="400" class="text-center" border="0">
           @else
-           <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="400" class="text-center" border="0">
+            <img src="https://omi.nz/bin/rnd/" alt="broken post image :(" width="400" class="text-center" border="0">
           @endif
           
           

@@ -15,8 +15,10 @@
             @endif
             Your browser does not support the video tag.
            </video>
+          @elseif ($post->image)
+            <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="100%">
           @else
-           <img src="{{ '/images/full/' . $post->image }}" alt="{{$post->image}}" width="100%">
+            <img src="https://omi.nz/bin/rnd/" alt="broken post image :(" width="100%">
           @endif
          </div>
     </div>

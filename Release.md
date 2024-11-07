@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.2.9 *2024/11/07* [ch_ch_ch_ch_changes]
+- Fixed so .gif uploads as .gif 
+- Slugs are _ and not - based
+- No Image redirects to random image @ https://omi.nz/bin/rnd/
+- Backend post edit , no image points to /images/ui/ni.gif
+
 ## 1.2.8 *2024/11/01* [trumbowyg]
 - Added Trumbowyg to replace the most expensive TinyMCE
 - Removed TinyMCE ... Huzzah!
