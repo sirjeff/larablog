@@ -5,6 +5,9 @@
 /public/images/
 /public/video/
 /public/storage
+/public/storage/app/purifier/CSS/*
+/public/storage/app/purifier/HTML/*
+/public/storage/app/purifier/URI/*
 /public/*.ico
 /storage/*.key
 /vendor
