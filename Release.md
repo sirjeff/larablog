@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.3.1 *2025/08/06* [align_with_prod]
+- corrected video htaccess file  
+- added versions to inf.db  
+- updated .gitignore  
+
 ## 1.3.0 *2025/08/06* [fixstuffagain]
 - Added some custom css  
 - .gitignore updates  
