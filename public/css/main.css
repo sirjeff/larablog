@@ -508,9 +508,9 @@ code,pre {
 /* Custom styles */
 
 /* div div div */
-.container .stretch .col-md-8 div div div h5{background-color:rgba(128,128,128,0.4);font-size:1.5em;font-weight:bold;margin:0;padding:0.5em 1em;}
-.container .stretch .col-md-8 div div div h5 + div{background-color:rgba(128,128,128,0.5);padding:1em;font-size:1.2em;}
-.container .stretch .col-md-8 div div div h6 {font-size:1.5em;font-weight:bold;}
+.container .stretch .post_body div div div div h5{background-color:rgba(128,128,128,0.4);font-size:1.5em;font-weight:bold;margin:0;padding:0.5em 1em;}
+.container .stretch .post_body div div div div h5 + div{background-color:rgba(128,128,128,0.5);padding:1em;font-size:1.2em;}
+.container .stretch .post_body div div div div h6 {font-size:1.5em;font-weight:bold;}
 
 
 
