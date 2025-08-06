@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.2 *2025/08/06* [fix_custom_styles]
+- fixed those pesky custom styles again  
+
 ## 1.3.1 *2025/08/06* [align_with_prod]
 - corrected video htaccess file  
 - added versions to inf.db  
