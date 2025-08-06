@@ -2,9 +2,9 @@
 !/bootstrap/cache/.gitignore
 /node_modules
 /public/hot
-/public/images/
-/public/video/
-/public/storage
+/public/images/*
+/public/video/*
+/public/storage/*
 /public/storage/app/purifier/CSS/*
 /public/storage/app/purifier/HTML/*
 /public/storage/app/purifier/URI/*
