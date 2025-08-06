@@ -1,8 +1,8 @@
 nme~Laravel Blog
-dsc~Blog built on Laravel
-cms~Laravel
+dsc~Blog built on Laravel for the official OMI-Blog
+cms~Laravel 5.4.36
 type~www
 www~https://127.0.0.1:8000
 dns~localhost
-php~7
+php~7.4.33
 composer~1
