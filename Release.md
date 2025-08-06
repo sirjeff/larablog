@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.3.0 *2025/08/06* [fixstuffagain]
+- Added some custom css  
+- .gitignore updates  
+- added Laravel version to readme.md  
+
 ## 1.2.9 *2024/11/07* [ch_ch_ch_ch_changes]
 - Fixed so .gif uploads as .gif 
 - Slugs are _ and not - based

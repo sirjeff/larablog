@@ -22,6 +22,7 @@ Technologies used thus far:
 - PHP 7.4 with 'php7.4' as the path _... it's a long story. Once upon a time, ..... anyway [see 'Install_and_Setup'](Install_and_Setup.md) for more on this_
 - Composer v1 _IKR?! [See 'Install_and_Setup'](Install_and_Setup.md) for more on this_
 - Git
+- Laravel Framework 5.4.36
 
 ## Installation
 
