@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.3.3 *2025/12/11* [littlefixes2025]
+- insert config `INSERT INTO config (id,type,name,value,description,created_at,updated_at) VALUES (NULL,'html','contact_blurb','content','Blurb for the Contact Page',NULL,NULL);`
+- add contact_blurb config to Contact page
+- insert config `INSERT INTO config (id,type,name,value,description,created_at,updated_at) VALUES (NULL,'html','register_blurb','content','Blurb for the Register Page',NULL,NULL);`
+- add register_blurb config to Register page
+- added user agent and IP to email template
+- minor css fixes
+
 ## 1.3.2 *2025/08/06* [fix_custom_styles]
 - fixed those pesky custom styles again  
 
