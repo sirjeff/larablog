@@ -4,3 +4,8 @@
 <pre>{{ $bodyMessage }}</pre>
 <hr>
 
+<h4>Technical Details</h4>
+<p>
+  <strong>IP Address:</strong> {{ $userIp }}<br>
+  <strong>User Agent:</strong> {{ $userAgent }}
+</p>

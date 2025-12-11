@@ -188,7 +188,7 @@ nav .author-image {
 }
 
 .btn.glyphicon-search {
-  margin-left: -40px;
+  /* margin-left: -40px; */
   display: inline-block;
   border-color: transparent;
 }
@@ -228,6 +228,10 @@ nav .author-image {
 .container form label,
 .container form .btn-gap {
     margin-top: 1.5em;
+}
+
+.container form label[for="remember"]{
+  margin-left:10px;
 }
 
 /* Config */

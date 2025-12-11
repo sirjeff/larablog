@@ -24,10 +24,16 @@ class PagesController extends Controller {
              "message"=>"min:10",
              "subject"=>"min:3"
          ]);
+
+         $userIp = $request->ip();
+         $userAgent = $request->header("User-Agent");
+    
          $data = [
              "email" => $request->email,
              "subject" => $request->subject,
              "bodyMessage" => $request->message,
+             "userIp" => $userIp,
+             "userAgent" => $userAgent,
          ];
          
          Mail::send("emails.contact", $data, function($message) use ($data) {

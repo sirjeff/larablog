@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h1>Register</h1>
-            <p class="lead">Please fill out the form below to register your account details for the Figured Blog.</p>
+            <p class="lead">
+              {!! \App\Config::where(['name' => 'register_blurb'])->first()->value !!}
+            </p>
             {!! Form::open() !!}
 
                 {!! Form::label('name', 'Name:') !!}

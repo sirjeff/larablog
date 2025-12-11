@@ -29,7 +29,7 @@ class ConfigController extends Controller
     public function index()
     {
 
-        $configs = Config::orderBy('id', 'asc')->paginate(7);
+        $configs = Config::orderBy('id', 'asc')->paginate(20);
         return view('config/index')->with('configs', $configs);
 
     }
@@ -67,7 +67,7 @@ public function update(Request $request, $id)
         $config->save();
         
         Session::flash("success", "Config for $config_name updated");
-        $configs = Config::orderBy("id", "asc")->paginate(7);
+        $configs = Config::orderBy("id", "asc")->paginate(20);
         return view("config/index")->with("configs", $configs);
     }
 

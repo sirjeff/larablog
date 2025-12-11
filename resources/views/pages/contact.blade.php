@@ -6,6 +6,9 @@
 <div class="row">
     <div class="col-md-12"> 
         <h1>Contact</h1>
+        <p>
+          {!! \App\Config::where(['name' => 'contact_blurb'])->first()->value !!}
+        </p>
         <hr>
         <form action="{{ url('contact') }}" method="POST">
             {{ csrf_field() }}
