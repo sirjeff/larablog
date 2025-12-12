@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.4 *2025/12/12* [fix_remote_ip]
+- added 'Request::setTrustedProxies' method to access remote IP via proxy
+
 ## 1.3.3 *2025/12/11* [littlefixes2025]
 - insert config `INSERT INTO config (id,type,name,value,description,created_at,updated_at) VALUES (NULL,'html','contact_blurb','content','Blurb for the Contact Page',NULL,NULL);`
 - add contact_blurb config to Contact page
