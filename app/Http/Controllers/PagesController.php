@@ -25,7 +25,8 @@ class PagesController extends Controller {
              "subject"=>"min:3"
          ]);
 
-         $userIp = $request->ip();
+         #$userIp = $request->ip();
+         $userIp = $request->header("X-Forwarded-For", $request->ip());
          $userAgent = $request->header("User-Agent");
     
          $data = [
