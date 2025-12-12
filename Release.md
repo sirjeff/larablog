@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.5 *2025/12/12 2pm* [remote_ip_fix_again]
+- Now using X-Forwarded-For header to get IP
+
 ## 1.3.4 *2025/12/12* [fix_remote_ip]
 - added 'Request::setTrustedProxies' method to access remote IP via proxy
 
