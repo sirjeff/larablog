@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.7 *2026/01/02 5.03pm* [fix_ugly_stlyes_grrrr_pt2]
+- I forgot the Rich Text Editor strips class name ahhhHHhhh
+
 ## 1.3.6 *2026/01/02 5pm* [fix_ugly_stlyes_bruh]
 - As the branch name suggests ... fixed ugly styles
 
