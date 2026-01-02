@@ -371,9 +371,28 @@ input[type=submit].btn-block.config_update{}
 .post_image {
 }
 
-.post_body p {
-    font-size: 1.5em !important;
+.post_body p,
+.post_body li {
+    font-size: 1.3em !important;
 }
+
+.post_body div.tip {
+  margin: 1em;
+  padding: .5em 1em;
+  border: solid 1px #ecc;
+  background: rgba(155, 10, 10, 0.1);
+}
+.post_body div.tip h4 {
+  font-size: 1.3em;
+  background: rgba(255, 0, 0, .1);
+  padding: .5em;
+ font-weight: bold;
+}
+.post_body div.tip p {
+  padding:0 .2em;
+  font-size: 1.1em;
+}
+
 
 a.archive-link {
     margin-top: 2em;

@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.6 *2026/01/02 5pm* [fix_ugly_stlyes_bruh]
+- As the branch name suggests ... fixed ugly styles
+
 ## 1.3.5 *2025/12/12 2pm* [remote_ip_fix_again]
 - Now using X-Forwarded-For header to get IP
 
