@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.3.9 *2026/01/07* [seo_fixing]
+- Phase one - sorting out SEO stuff, with new template for posts 'post.blade.php'
+
 ## 1.3.8 *2026/01/02 5.25pm* [fix_ugly_stlyes_grrrr_pt749]
 - Wow some styles were overwritten by the RTE :(
 

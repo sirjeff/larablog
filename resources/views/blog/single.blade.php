@@ -1,4 +1,4 @@
-@extends('main')
+@extends('post')
 <?php $titleTag = htmlspecialchars($post->title); ?>
 @section('title', "$titleTag")
 
