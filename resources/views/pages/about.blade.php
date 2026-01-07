@@ -1,5 +1,6 @@
 @extends('main')
 @section('title','About')
+@section('canonical', 'about')
 @section('css')
   <style>
    nav.navbar{margin-bottom:0px}

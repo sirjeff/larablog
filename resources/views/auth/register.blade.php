@@ -1,5 +1,6 @@
 @extends('main')
 @section('title', "Register")
+@section('canonical', '')
 @section('content')
 
     <div class="row">

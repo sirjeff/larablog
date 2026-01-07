@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('title', '| View Post')
-
+@section('canonical', '')
 @section('content')
 
 	<div class="row">

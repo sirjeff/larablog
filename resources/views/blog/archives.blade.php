@@ -1,7 +1,6 @@
 @extends('main')
-
 @section('title', 'Archives')
-
+@section('canonical', 'blog/archives')
 @section('content')
 
 

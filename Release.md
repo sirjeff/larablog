@@ -1,6 +1,9 @@
 # Release Notes
 
-## 1.3.9 *2026/01/07* [seo_fixing]
+## 1.3.10 *2026/01/07* 1.20pm [seo_fixing_p2]
+- Phase two - sorting out SEO stuff, updated robots.txt and added meta description, author meta and canonical links to all pages
+
+## 1.3.9 *2026/01/07* 12.01pm [seo_fixing]
 - Phase one - sorting out SEO stuff, with new template for posts 'post.blade.php'
 
 ## 1.3.8 *2026/01/02 5.25pm* [fix_ugly_stlyes_grrrr_pt749]

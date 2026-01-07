@@ -1,6 +1,6 @@
 @extends('main')
 @section('title','All Categories')
-
+@section('canonical', '')
 @section('content')
     <div class="row">
         <div class="col-md-12">
