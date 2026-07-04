@@ -3,3 +3,5 @@ Disallow: /account
 Disallow: /login
 Disallow: /auth/register
 Disallow: /password/reset
+
+Sitemap: https://blog.omi.nz/sitemap.xml
