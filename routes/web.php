@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Input;
 */
 
 
+Route::get('sitemap.xml', 'SitemapController@sitemap');
+
 Route::get('login', 'Auth\LoginController@showLoginForm');
 Route::get('auth/login', 'Auth\LoginController@showLoginForm');
 

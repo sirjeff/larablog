@@ -10,6 +10,7 @@
 /public/storage/app/purifier/URI/*
 /public/*.ico
 /storage/*.key
+/storage/app/*
 /vendor
 /.idea
 /.vagrant
